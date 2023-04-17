@@ -1,0 +1,84 @@
+.main-swiper
+    &-container
+        position: relative
+        margin-left: 1em
+        margin-right: 1em
+        & .swiper-slide
+            background: $silverBack
+            border-radius: 1.5625em
+            height: 35em
+            max-height: 35.375em
+            overflow: hidden
+            h1 
+                display: block
+            img
+                position: absolute
+                object-fit: cover
+                object-position: right
+                min-width: 100%
+                max-width: 120%
+                min-height: 100%
+            .body
+                position: relative
+                padding-top: 4.5625em
+            a
+                color: $gray
+                font-size: 1.8125em
+        .swiper-pagination-bullet
+            width: 0.625em
+            height: 0.625em
+            border-radius: 50%
+            background: $gray
+            margin: 0.3125em
+            &s
+                position: absolute
+                z-index: 1
+                bottom: 0.625em
+                display: inline-flex
+                align-items: center
+                gap: 0.625em
+            &-active
+                margin: 0
+                background: $white
+                border: 0.3125em solid $red
+    &-btns
+        position: absolute
+        display: flex
+        justify-content: space-between
+        top: 50%
+        transform: translateY(-50%)
+        z-index: 1
+        width: 94.55%
+        left: 2.725%
+    &-button
+        &-prev,
+        &-next
+            display: inline-block
+    .container
+        position: relative
+        width: 1432px
+    
+.banner
+    height: 328px
+    color: $white
+    border-radius: 24px
+    &-body
+        position: absolute
+        z-index: 100
+        height: 100%
+        width: 60%
+        right: 147px
+        form.d-flex
+            align-items: stretch
+    h2
+        text-align: left
+        margin-bottom: .5em
+    p
+        font-size: 20px
+        line-height: 23px
+@media (max-width: 1670px)
+    .swiper
+        .container
+            width: 100%
+            margin-left:5%
+            margin-right:5%

@@ -1,0 +1,143 @@
+.products
+    &-filter
+        & + .products-elems
+            margin-top: 35px
+        ul
+            gap: 10px
+            display: flex
+            flex-wrap: wrap
+            li
+                width: calc( 100% / 5 - 10px )
+            a
+                display: inline-flex
+                height: 41px
+                gap: 10px
+                align-items: center
+            .img
+                max-width: 38px
+                width: 38px
+                text-align: center
+    &-elems
+        display: grid
+        grid-template-columns: repeat(3, calc($col-12_4 - 32px))
+        gap: 30px
+        margin-bottom: 20px
+        justify-content: space-between
+    &-card
+        position: relative
+        background: $white
+        box-shadow: $shad1
+        border-radius: 25px
+        padding: 25px
+        &_body
+            position: relative
+            z-index: 1
+            top:0
+        &_backround
+            position: absolute
+            top: 0
+            left: 0
+            height: 100%
+            width: 100%
+            z-index: 0
+            object-fit: contain
+            object-position: top left
+        &_title
+            h3
+                display: inline-block
+                width: 77.35%
+                float: left
+            .user-control
+                display: inline-block
+                float: right
+        .offer_of
+            margin-bottom: 13px
+            span
+                margin-left: 14px
+                white-space: pre-line
+                font-weight: 500
+                font-size: 12px
+                line-height: 14px
+                color: $red
+                height: 28px
+        &_gifts
+            font-size: 13px
+            line-height: 15px
+            display: inline-flex
+            flex-direction: column
+            justify-content: space-between
+            align-items: left
+            gap: 7px
+            >li
+                display: inline-flex
+                align-items: flex-start
+            &-icon
+                display: inline-block
+                width: 32px
+                height: 32px
+                border-radius: 50%
+                background: $black
+                text-align: center
+                line-height: 32px
+            &-text
+                display: inline-block
+                width: calc( 100% - 42px )
+                margin-left: 9px
+        &_charactered
+            margin-top: 11px
+            display: flex
+            justify-content: space-between
+            font-size: 12px
+            line-height: 13px
+            letter-spacing: -.4px
+            gap: 7px
+            li
+                border: 1px solid $gray200
+                border-radius: 20px
+                padding: 9px 12px 8px
+                display: inline-flex
+                align-items: center
+                justify-content: center
+                gap: 5px
+        &-btns
+            margin-top: 19px
+            height: 50px
+            position: relative
+            a:first-child
+                z-index: 13
+                left: 0
+                width: 33%
+                padding-right: 0
+            a:nth-child(2)
+                z-index: 12
+                left:29%
+                padding-left:3%
+                width: 37%
+            a:last-child
+                z-index: 11
+                right: 0
+                padding-left:5%
+                width: 39%
+            .offer_of
+                &-black,
+                &-gray,
+                &-red
+                    top: 0
+                    box-sizing: border-box
+                    position: absolute
+                    height: 100%
+                    display: inline-flex
+                    align-items: center
+                    justify-content: center
+                    border-radius: 6px
+                    clip-path: polygon(0% 0%, 92% 0%, 100% 50%, 92% 100%, 0 100%)
+    &-prices
+        font-size: 22px
+        line-height: 26px
+        &-credit
+            font-size: 16px
+            line-height: 14px
+            text-align: center
+    .still
+        margin-top: 48px
+        text-align: center

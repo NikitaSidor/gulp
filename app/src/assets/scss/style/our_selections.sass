@@ -1,0 +1,49 @@
+.our_selections
+    .title
+        display: flex
+        align-items: center
+        gap: 24px
+        h2
+            display: inline-block
+        >.btn
+            display: inline-block
+            padding: .5em 1em 0.5em
+            border-radius: 11px
+    &-btns
+        margin-left: auto
+        >*
+            display: inline-block
+        .btn-1
+            &:last-child
+                background: $red
+                color: $white
+                margin-left: 12px
+    &-swiper-container
+        .swiper-slide
+            position: relative
+            border-radius: 25px
+            overflow: hidden
+            .body
+                position: relative
+                box-sizing: border-box
+                height: 317px
+                background: linear-gradient(180deg, rgba(38, 38, 38, 0) 63.88%, rgba(38, 38, 38, 0.93) 100%)
+                padding: 29px 25px 25px
+                width: 100%
+                display: flex
+                justify-content: space-between
+                align-items: flex-end
+            h3
+                font-weight: 700
+                font-size: 20px
+                line-height: 23px
+                margin: 0
+                color: $white
+                max-width: 50%
+            &_title
+                display: flex
+                width: 100%
+                justify-content: space-between
+                align-items: center
+        .btn-2
+            width: fit-content

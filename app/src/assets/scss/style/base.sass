@@ -1,0 +1,204 @@
+:root 
+    font-size: 16px
+    box-sizing: border-box
+    color: $black
+    font-family: 'Roboto', sans-serif
+
+*
+    box-sizing: inherit
+body
+    color: $black
+    margin: 0
+    padding: 0
+
+ul 
+    list-style-type: none
+    margin: 0
+    padding: 0
+
+a
+    text-decoration: none
+    color: inherit
+
+button
+    border: none
+    outline: none
+    
+.container
+    margin-left: auto
+    margin-right: auto
+    max-width: calc( (1920px - 244px*2) )
+    padding-left: 1rem
+    padding-right: 1rem
+
+
+.d-flex
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 1rem
+    &.left
+        justify-content: flex-start
+
+.d-inline_block
+    display: inline-block
+
+
+span
+    &.highlight
+        padding: 0.2em 0.5em
+        border-radius: 1em
+        background: $red
+        color: $white
+    &.red
+        color: $red
+
+[class^="line"]
+    width: 100%
+    height: 1px
+    background: $black
+    &[class$="-silver"]
+        background-color: $silverBack
+[class^="line_column"]
+    height: 100%
+    width: 1px
+h
+    &1
+        font-weight: 700
+        font-size: 3.75em
+        margin-top: 0.5833em
+        margin-bottom: 0.4em
+    &2
+        font-weight: 700
+        font-size: 40px
+        line-height: 47px
+        margin-top: 64px
+        margin-bottom: 64px
+    &3
+        font-weight: 700
+        font-size: 27px
+        line-height: 32px
+        margin: 0
+        margin-bottom: 25px
+.col-12
+    &_1
+        display: inline-block
+        width: calc( 100% / 12 )
+    &_2
+        display: inline-block
+        width: calc( 100% / 12 * 2 )
+    &_3
+        display: inline-block
+        width: calc( 100% / 12 * 3 )
+    &_4
+        display: inline-block
+        width: calc( 100% / 12 * 4 )
+        &-gap
+            display: inline-block
+            width: calc( 100% / 12 * 4 - 32px)
+    &_5
+        display: inline-block
+        width: calc( 100% / 12 * 5 )
+    &_6
+        display: inline-block
+        width: calc( 100% / 12 * 6 )
+    &_7
+        display: inline-block
+        width: calc( 100% / 12 * 7 )
+    &_8
+        display: inline-block
+        width: calc( 100% / 12 * 8 )
+    &_9
+        display: inline-block
+        width: calc( 100% / 12 * 9 )
+    &_10
+        display: inline-block
+        width: calc( 100% / 12 * 10 )
+    &_11
+        display: inline-block
+        width: calc( 100% / 12 * 11 )
+    &_12
+        display: inline-block
+        width: calc( 100% / 12 * 12 )
+
+.offer_of
+    display: flex
+    align-items: center
+    width: 100%
+    &-black,
+    &-gray,
+    &-red
+        width: 43%
+        clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0 100%)
+        display: inline-block
+        padding-right: 5%
+        border-radius: 4px
+        text-align: center
+        color: $white
+        font-weight: 500
+        font-size: 13px
+        line-height: 28px
+    &-black
+        background: $black
+    &-gray
+        background: $gray
+    &-red 
+        background: $red
+section
+    margin-top: 64px
+    margin-bottom: 71px
+
+.b
+    &-silver
+        background: $silverBack
+        padding: 22px 25px
+        border-radius: 10px
+    &-gray200
+        background: $gray200
+        padding: 22px 25px
+        border-radius: 10px
+    &-white
+        background: $white
+        padding: 22px 25px
+        border-radius: 10px
+
+.btn-1
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    background: $white
+    color: $black
+    font-weight: 700
+    font-size: 1em
+    line-height: 1.1875em
+    text-align: center
+    text-transform: uppercase
+    border-radius: 0.375em
+    height: 48px
+    width: 48px
+    border-radius: 6px
+
+
+    box-shadow: $shad1
+    border-radius: 6px
+.btn-2
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    background: rgba($gray200,.5) 
+    border-radius: 6px
+    font-size: 14px
+    line-height: 16px
+    color: $black
+    padding: 7.5px 1em 8px
+.img-cover
+    overflow: hidden
+    position: relative
+    img
+        position: absolute
+        top: 0
+        left: 0
+        min-width: 100%
+        min-height: 100%
+        object-fit: cover
+        object-position: center

@@ -1,0 +1,105 @@
+/* style */
+i[class^="icon_"]::after
+    display: inline-block
+    content: ''
+    width: 1em
+    height: 1em
+    line-height: 1.1875em
+    background-size: contain
+    background-color: #000
+    mask-position: center
+    mask-repeat: no-repeat
+    mask-size: contain
+    margin-bottom: -2px
+
+i
+    &[class^="icon_location"]::after
+        width: 0.875rem
+        height: 1rem
+        mask-image: url('/assets/images/icon/location.svg')
+    &[class^="icon_clock"]::after
+        width: 1rem
+        height: 1rem
+        mask-image: url('/assets/images/icon/clock.svg')
+    &[class^="icon_menu"]::after
+        width: 1rem
+        height: 1rem
+        mask-image: url('/assets/images/icon/menu.svg')
+    &[class^="icon_tel"]::after
+        width: 1rem
+        height: 1rem
+        mask-image: url('/assets/images/icon/tel.svg')
+    &[class^="icon_like"]
+        &::after
+            width: 1.5rem
+            height: 1.3125rem
+            mask-image: url('/assets/images/icon/like.svg')
+        &.active::after
+            background-color: $red
+    &[class^="icon_column"]::after
+        width: 1.0625rem
+        height: 1.3125rem
+        mask-image: url('/assets/images/icon/column.svg')
+    &[class^="icon_search"]::after
+        width: 1.3125rem
+        height: 1.3125rem
+        mask-image: url('/assets/images/icon/search.svg')
+    &[class^="icon_motor"]::after
+        width: 1.3125rem
+        height: 1.3125rem
+        mask-image: url('/assets/images/icon/motor.svg')
+    &[class^="icon_benz"]::after
+        width: 1.3125rem
+        height: 1.3125rem
+        mask-image: url('/assets/images/icon/benz.svg')
+    &[class^="icon_speed"]::after
+        width: 1.3125rem
+        height: 1.3125rem
+        mask-image: url('/assets/images/icon/speed.svg')
+    &[class^="icon_timer"]::after
+        width: 1.3125rem
+        height: 1.3125rem
+        mask-image: url('/assets/images/icon/timer.svg')
+    &[class^="icon_gift"]::after
+        width: 15px
+        height: 14px
+        mask-image: url('/assets/images/icon/gift.svg')
+    /* Arrows */
+    &[class^="icon_arrow-left"]::after
+        width: 1.3125rem
+        height: 1.3125rem
+        mask-image: url('/assets/images/icon/arrow-left.svg')
+    &[class^="icon_arrow-right"]::after
+        width: 1.3125rem
+        height: 1.3125rem
+        mask-image: url('/assets/images/icon/arrow-right.svg')
+    &[class^="icon_arrow-bottom"]::after
+        width: 1.3125rem
+        height: 1.3125rem
+        mask-image: url('/assets/images/icon/arrow-bottom.svg')
+    
+    /* Const */
+    &.icon_whatsapp-const::after
+        background-image: url('/assets/images/icon/whatsapp.svg')
+        background-color: transparent
+        width: 1.25rem
+        height: 1.25rem
+    
+    /* Arrows */   
+    &[class^="icon_arrow-left"]::after
+        width: 1.1875rem
+        height: 1.8889rem
+        mask-image: url('/assets/images/icon/arrow-left.svg')
+    &[class^="icon_arrow-right"]::after
+        width: 1.1875rem
+        height: 1.8889rem
+        mask-image: url('/assets/images/icon/arrow-right.svg')
+    /* Color */
+    &[class$="-gray"]::after
+        background: $gray
+    &[class$="-white"]::after
+        background: $white
+    &[class$="-back-red"]::after
+        background: $red
+i.icon_arrow-right-white::after
+    background: $white
