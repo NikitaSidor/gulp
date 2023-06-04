@@ -1,0 +1,109 @@
+@import style/var
+button,
+input[type="submit"]
+  display: inline-block
+  padding: 0.5rem 1rem
+  border: none
+  border-radius: 0.25rem
+  background-color: #007bff
+  color: #fff
+  font-size: 1rem
+  cursor: pointer
+
+  &:hover
+    background-color: #0069d9
+
+/* Стили для форм */
+form 
+  margin-bottom: 1rem
+
+  label 
+    display: block
+    margin-bottom: 0.5rem
+
+  input,
+  textarea 
+    display: block
+    width: 100%
+    padding: 0.5rem
+    border: 1px solid #ccc
+    border-radius: 0.25rem
+    font-size: 1rem
+
+    &:focus 
+      outline: none
+      border-color: #007bff
+
+/* Стили для таблиц */
+table 
+  width: 100%
+  border-collapse: collapse
+
+  th,
+  td 
+    padding: 0.5rem
+    border: 1px solid #ccc
+
+/* Стили для форматирования текста */
+strong,
+b 
+  font-weight: bold
+
+em,
+i 
+  font-style: italic
+
+u 
+  text-decoration: underline
+
+/* Стили для блоков */
+.section 
+  margin-bottom: 2rem
+
+  h2 
+    margin-bottom: 1rem
+
+  p:last-child 
+    margin-bottom: 0
+
+/* Стили для футера */
+footer 
+  background-color: #f5f5f5
+  padding: 1rem 0
+  text-align: center
+
+  p 
+    margin-bottom: 0
+
+/* Стили для навигации */
+nav ul 
+  list-style: none
+  display: flex
+  justify-content: space-between
+
+  li 
+    margin-right: 1rem
+
+    &:last-child 
+      margin-right: 0
+
+  a 
+    color: #333
+    text-decoration: none
+
+    &:hover 
+      text-decoration: underline
+
+/* Стили для контейнера */
+.container 
+  margin: 0 auto
+  max-width: map-get($container-max-widths, xl)
+  padding: 0 15px
+  @media screen and (max-width: map-get($container-max-widths, lg)) 
+    max-width: map-get($container-max-widths, lg)
+
+  @media screen and (max-width: map-get($container-max-widths, md)) 
+    max-width: map-get($container-max-widths, md)
+
+  @media screen and (max-width: map-get($container-max-widths, sm)) 
+    max-width: map-get($container-max-widths, sm)

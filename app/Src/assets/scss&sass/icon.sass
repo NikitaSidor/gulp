@@ -29,13 +29,10 @@ i
         width: 1rem
         height: 1rem
         mask-image: url('/assets/images/icon/tel.svg')
-    &[class^="icon_like"]
-        &::after
-            width: 1.5rem
-            height: 1.3125rem
-            mask-image: url('/assets/images/icon/like.svg')
-        &.active::after
-            background-color: $red
+    &[class^="icon_like"]::after
+        width: 1.5rem
+        height: 1.3125rem
+        mask-image: url('/assets/images/icon/like.svg')
     &[class^="icon_column"]::after
         width: 1.0625rem
         height: 1.3125rem
@@ -94,12 +91,3 @@ i
         width: 1.1875rem
         height: 1.8889rem
         mask-image: url('/assets/images/icon/arrow-right.svg')
-    /* Color */
-    &[class$="-gray"]::after
-        background: $gray
-    &[class$="-white"]::after
-        background: $white
-    &[class$="-back-red"]::after
-        background: $red
-i.icon_arrow-right-white::after
-    background: $white

@@ -1,0 +1,27 @@
+// =============================================================================
+// Font Face
+// =============================================================================
+/* 
+ * @param $name - название шрифта
+ * @param $path - путь к файлу шрифта
+ * @param $weight (опционально) - вес шрифта
+ * @param $style (опционально) - стиль шрифта
+ * @param $exts (опционально) - расширения файлов шрифта
+ * Применение: @include font-face(Roboto, Roboto-Bold, bold, $exts:ttf)
+ */
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg)
+  $src: null
+  $extmods: (eot: "?", svg: "#" + str-replace($name, " ", "_"))
+  $formats: (otf: "opentype", ttf: "truetype")
+
+  @for $i from 1 through length($exts)
+    $ext: nth($exts, $i)
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext)
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext)
+    $src: append($src, url(quote($path + "." + str-slice($extmod, 1, -1))) format(quote($format)), comma)
+
+  @font-face
+    font-family: quote($name)
+    font-style: $style
+    font-weight: $weight
+    src: $src

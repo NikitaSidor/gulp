@@ -16,8 +16,9 @@ const del = require("del");
 const { stream } = require('globby');
 const notify = require("gulp-notify");
 
-const srcPath = "./app/src",
-distPath = "./app/dist"
+
+const srcPath = "./app/Src",
+distPath = "./app/Dist"
 
 const path = {
     build: {
@@ -29,21 +30,49 @@ const path = {
     },
     src: {
         html: `${srcPath}/*.html`,
-        css: `${srcPath}/assets/scss/*.sass`,
+        css: `${srcPath}/assets/scss&sass/*.s?ss`,
         js: `${srcPath}/assets/js/*.js`,
         images: `${srcPath}/assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
         fonts: `${srcPath}/assets/fonts/**/*.{eot,woff,woff2,ttf,svg}`,
     },
     watch: {
         html: `${srcPath}/**/*.html`,
-        css: `${srcPath}/assets/scss/*.sass`,
+        css: `${srcPath}/assets/scss&sass/*.s?ss`,
         js: `${srcPath}/assets/js/*.js`,
         images: `${srcPath}/assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
         fonts: `${srcPath}/assets/fonts/**/*.{eot,woff,woff2,ttf,svg}`,
     },
     clean: distPath
 }
-
+function css() {
+    return src(path.src.css, {base: `${srcPath}/assets/scss&sass/`})
+        .pipe(plumber({
+            errorHandler : function(err) {
+                notify.onError({
+                    title: "SCSS Error",
+                    message: "Error: <%= error.message %>"
+                })(err);
+                (this.emit('end'));
+            }
+        }))
+        .pipe(sass())
+        .pipe(autoprefixer())
+        .pipe(cssbeatify())
+        .pipe(dest(path.build.css))
+        .pipe(cssnano({
+            zindex: false,
+            discardComments: {
+                removeAll: true
+            }
+        }))
+        .pipe(rename({
+            suffix: ".min",
+            extname: ".css"
+        }))
+        .pipe(removeComments())
+        .pipe(dest(path.build.css))
+        .pipe(browserSync.reload({stream: true}))
+}
 function serve() {
     browserSync.init({
         server: {
@@ -65,35 +94,7 @@ function html() {
         .pipe(browserSync.reload({stream: true}))
 }
 
-function css() {
-    return src(path.src.css, {base: `${srcPath}/assets/scss/`})
-        .pipe(plumber({
-            errorHandler : function(err) {
-                notify.onError({
-                    title: "SCSS Error",
-                    message: "Error: <%= error.message %>"
-                })(err);
-                (this.emit('end'));
-            }
-        }))
-        .pipe(sass())
-        .pipe(autoprefixer())
-        .pipe(cssbeatify())
-        .pipe(dest(path.build.css))
-        .pipe(cssnano({
-            zindex: false,
-            discardComments: {
-                removeAll: true
-            }
-        }))
-        .pipe(removeComments())
-        .pipe(rename({
-            suffix: ".min",
-            extname: ".css"
-        }))
-        .pipe(dest(path.build.css))
-        .pipe(browserSync.reload({stream: true}))
-}
+
 
 function js() {
     return src(path.src.js, {base: `${srcPath}/assets/js/`})
@@ -151,8 +152,6 @@ function watchFiles() {
     gulp.watch([path.watch.fonts], fonts)
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts))
-const watch = gulp.series(build, gulp.parallel(watchFiles, serve))
 
 exports.html = html;
 exports.css = css;
@@ -160,5 +159,5 @@ exports.js = js;
 exports.img = images;
 exports.fonts = fonts;
 exports.clean = clean;
-exports.build = build;
-exports.default = watch;
+exports.build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
+exports.default = gulp.series(exports.build, gulp.parallel(watchFiles, serve));
