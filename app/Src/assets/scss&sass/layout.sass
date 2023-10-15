@@ -1,92 +1,32 @@
 @import style/var
-button,
-input[type="submit"]
-  display: inline-block
-  padding: 0.5rem 1rem
-  border: none
-  border-radius: 0.25rem
-  background-color: #007bff
-  color: #fff
-  font-size: 1rem
-  cursor: pointer
 
+:root 
+    /* Основной цвет фона */
+    --primary-bg-color: #333
+    /* Основной цвет текста */
+    --primary-text-color: #fff
+    /* Акцентный цвет */
+    --accent-color: #ff5733
+    /* Цвет ссылок */
+    --link-color: #007BFF
+    /* Цвет ссылок при наведении */
+    --link-hover-color: #0056b3
+    /* Цвет ошибок */
+    --error-color: #FF0000
+    /* Цвет успешных действий */
+    --success-color: #00FF00
+
+*
+  color: $text-color
+a
+  color: $link-color
+  &[href^="tel:"],
+  &[href^="mail:"]
+    white-space: nowrap
   &:hover
-    background-color: #0069d9
-
-/* Стили для форм */
-form 
-  margin-bottom: 1rem
-
-  label 
-    display: block
-    margin-bottom: 0.5rem
-
-  input,
-  textarea 
-    display: block
-    width: 100%
-    padding: 0.5rem
-    border: 1px solid #ccc
-    border-radius: 0.25rem
-    font-size: 1rem
-
-    &:focus 
-      outline: none
-      border-color: #007bff
-
-/* Стили для таблиц */
-table 
-  width: 100%
-  border-collapse: collapse
-
-  th,
-  td 
-    padding: 0.5rem
-    border: 1px solid #ccc
-
-/* Стили для форматирования текста */
-strong,
-b 
-  font-weight: bold
-
-em,
-i 
-  font-style: italic
-
-u 
-  text-decoration: underline
-
-/* Стили для блоков */
-.section 
-  margin-bottom: 2rem
-
-  h2 
-    margin-bottom: 1rem
-
-  p:last-child 
-    margin-bottom: 0
-
-/* Стили для футера */
-footer 
-  background-color: #f5f5f5
-  padding: 1rem 0
-  text-align: center
-
-  p 
-    margin-bottom: 0
-
-/* Стили для навигации */
-nav ul 
-  list-style: none
-  display: flex
-  justify-content: space-between
-
-  a 
-    color: #333
     text-decoration: none
+    color: $link-hover-color
 
-    &:hover 
-      text-decoration: underline
 
 /* Стили для контейнера */
 .container 
