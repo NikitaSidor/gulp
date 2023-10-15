@@ -1,1 +1,21 @@
 @import style/var
+
+*
+    box-sizing: border-box
+
+a[href^="tel:"],
+a[href^="mail:"]
+    white-space: nowrap
+
+.header
+    height: 72px
+    &--menu
+        flex: 1 1 100%
+    &--content
+        display: flex
+        gap: 40px
+        .logo
+            padding-right: 36px
+    &__nav--row ul
+        display: inline-flex
+        gap: 40px
