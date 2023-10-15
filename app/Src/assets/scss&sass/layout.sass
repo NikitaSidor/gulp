@@ -2,15 +2,15 @@
 
 :root 
     /* Основной цвет фона */
-    --primary-bg-color: #333
+    --primary-bg-color: ##F4F4FD
+    /* Акцентный цвет текста */
+    --text-accent-color: #2E2F42
     /* Основной цвет текста */
-    --primary-text-color: #fff
-    /* Акцентный цвет */
-    --accent-color: #ff5733
+    --text-color: #434455
     /* Цвет ссылок */
-    --link-color: #007BFF
+    --link-color: inherit
     /* Цвет ссылок при наведении */
-    --link-hover-color: #0056b3
+    --link-hover-color: #404BBF
     /* Цвет ошибок */
     --error-color: #FF0000
     /* Цвет успешных действий */
@@ -27,17 +27,20 @@ a
     text-decoration: none
     color: $link-hover-color
 
+h1, h2, h3
+  color: $text-accent-color
 
 /* Стили для контейнера */
-.container 
+.container
   margin: 0 auto
-  max-width: map-get($container-max-widths, xl)
-  padding: 0 15px
-  @media screen and (max-width: map-get($container-max-widths, lg)) 
-    max-width: map-get($container-max-widths, lg)
+  max-width: map-get($container-max-widths, ld)
+  padding: 0 .9375rem
+  @media screen and (max-width: map-get($standart-widths, desktop))
+    max-width: map-get($container-max-widths, d)
 
-  @media screen and (max-width: map-get($container-max-widths, md)) 
-    max-width: map-get($container-max-widths, md)
-
-  @media screen and (max-width: map-get($container-max-widths, sm)) 
-    max-width: map-get($container-max-widths, sm)
+  @media screen and (max-width: map-get($standart-widths, max-tablet))
+    max-width: map-get($container-max-widths, t-max)
+    padding-left: 15px !important
+    padding-right: 15px !important
+  @media screen and (max-width: map-get($standart-widths, min-tablet))
+    max-width: map-get($container-max-widths, t)

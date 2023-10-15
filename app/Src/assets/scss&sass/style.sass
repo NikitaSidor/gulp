@@ -2,27 +2,52 @@
 
 
 .header
-    line-height: 72px
+    box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 2px 1px 0px rgba(46, 47, 66, 0.08)
+    .logo
+        padding-right: 36px
+
+    .desktop__mobile--menu
+        display: flex
+        width: 100%
+        align-items: center
+
     &--menu
         flex: 1 1 100%
-    &--content
-        display: flex
-        gap: 40px
-        .logo
-            padding-right: 36px
-    &__nav--row ul
-        display: inline-flex
-        gap: 40px
+        a
+            font-weight: 500
+            color: $text-accent-color
         a.active
             position: relative
             display: inline-block
-            &::after
-                content: ''
-                display: block
-                position: absolute
-                width: 100%
-                height: 4px
-                background: #333
-                border-radius: 4px
-                bottom: 0
+            color: $link-hover-color
 
+    &__nav--row ul
+        display: inline-flex
+        gap: 40px
+    &--content
+        display: flex
+        gap: 40px
+        align-items: center
+        @media screen and (min-width:  map-get($standart-widths, min-tablet))
+            a
+                line-height: 72px
+            a.active
+                &::after
+                    content: ''
+                    display: block
+                    position: absolute
+                    width: 100%
+                    height: 4px
+                    background: $link-hover-color
+                    border-radius: 4px
+                    bottom: 0
+        @media screen and (max-width:  map-get($standart-widths, tablet))
+            .header__nav--row:last-child ul
+                flex-direction: column
+                gap: 12px
+
+        @media screen and (max-width:  map-get($standart-widths, min-tablet))
+            .desktop__mobile--menu
+                flex-direction: column
+                .header__nav--row ul
+                    flex-direction: column
