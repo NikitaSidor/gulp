@@ -1,7 +1,7 @@
 const { src, dest } = require('gulp');
 const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
-const cssbeatify = require('gulp-cssbeautify');
+const cssbeautify = require('gulp-cssbeautify');
 const cssnano = require('gulp-cssnano');
 const browserSync = require('browser-sync');
 const panini = require('panini');
@@ -15,10 +15,13 @@ const rigger = require('gulp-rigger');
 const del = require("del");
 const { stream } = require('globby');
 const notify = require("gulp-notify");
+const ts = require('gulp-typescript');
+const sourcemaps = require('gulp-sourcemaps');
 
+const tsProject = ts.createProject('tsconfig.json');
 
 const srcPath = "./app/Src",
-distPath = "./app/Dist"
+    distPath = "./app/Dist";
 
 const path = {
     build: {
@@ -31,23 +34,24 @@ const path = {
     src: {
         html: `${srcPath}/*.html`,
         css: `${srcPath}/assets/scss&sass/*.s?ss`,
-        js: `${srcPath}/assets/js/*.js`,
+        js: `${srcPath}/assets/js/*.ts`, // Change to TypeScript files
         images: `${srcPath}/assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
         fonts: `${srcPath}/assets/fonts/**/*.{eot,woff,woff2,ttf,svg}`,
     },
     watch: {
         html: `${srcPath}/**/*.html`,
         css: `${srcPath}/assets/scss&sass/*.s?ss`,
-        js: `${srcPath}/assets/js/*.js`,
+        js: `${srcPath}/assets/js/*.ts`, // Change to TypeScript files
         images: `${srcPath}/assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}`,
         fonts: `${srcPath}/assets/fonts/**/*.{eot,woff,woff2,ttf,svg}`,
     },
     clean: distPath
-}
+};
+
 function css() {
-    return src(path.src.css, {base: `${srcPath}/assets/scss&sass/`})
+    return src(path.src.css, { base: `${srcPath}/assets/scss&sass/` })
         .pipe(plumber({
-            errorHandler : function(err) {
+            errorHandler: function (err) {
                 notify.onError({
                     title: "SCSS Error",
                     message: "Error: <%= error.message %>"
@@ -57,7 +61,7 @@ function css() {
         }))
         .pipe(sass())
         .pipe(autoprefixer())
-        .pipe(cssbeatify())
+        .pipe(cssbeautify())
         .pipe(dest(path.build.css))
         .pipe(cssnano({
             zindex: false,
@@ -71,18 +75,19 @@ function css() {
         }))
         .pipe(removeComments())
         .pipe(dest(path.build.css))
-        .pipe(browserSync.reload({stream: true}))
+        .pipe(browserSync.reload({ stream: true }));
 }
+
 function serve() {
     browserSync.init({
         server: {
             baseDir: distPath
         }
-    })
+    });
 }
 
 function html() {
-    return src(path.src.html, {base:srcPath})
+    return src(path.src.html, { base: srcPath })
         .pipe(plumber())
         .pipe(panini({
             root: srcPath,
@@ -91,11 +96,9 @@ function html() {
             data: `${srcPath}/tpl/data/`,
         }))
         .pipe(dest(path.build.html))
-        .pipe(browserSync.reload({stream: true}))
+        .pipe(browserSync.reload({ stream: true }));
 }
-
-
-
+// JavaScript
 function js() {
     return src(path.src.js, {base: `${srcPath}/assets/js/`})
         .pipe(plumber({
@@ -117,47 +120,70 @@ function js() {
         .pipe(dest(path.build.js))
         .pipe(browserSync.reload({stream: true}))
 }
+// TypeScript
+function tsCompile() {
+    return src(path.src.js, { base: `${srcPath}/assets/js/` })
+        .pipe(plumber({
+            errorHandler: function (err) {
+                notify.onError({
+                    title: "TS Error",
+                    message: "Error: <%= error.message %>"
+                })(err);
+                (this.emit('end'));
+            }
+        }))
+        .pipe(sourcemaps.init())
+        .pipe(tsProject())
+        .pipe(dest(path.build.js))
+        .pipe(uglify())
+        .pipe(rename({
+            suffix: ".min",
+            extname: ".js"
+        }))
+        .pipe(sourcemaps.write('.'))
+        .pipe(dest(path.build.js))
+        .pipe(browserSync.reload({ stream: true }));
+}
 
 function images() {
-    return src(path.src.images, {base: `${srcPath}/assets/images/`})
+    return src(path.src.images, { base: `${srcPath}/assets/images/` })
         .pipe(imagemin([
-            imagemin.gifsicle({interlaced: true}),
-            imagemin.mozjpeg({quality: 80, progressive: true}),
-            imagemin.optipng({optimizationLevel: 5}),
+            imagemin.gifsicle({ interlaced: true }),
+            imagemin.mozjpeg({ quality: 80, progressive: true }),
+            imagemin.optipng({ optimizationLevel: 5 }),
             imagemin.svgo({
                 plugins: [
-                    {removeViewBox: true},
-                    {cleanupIDs: false}
+                    { removeViewBox: true },
+                    { cleanupIDs: false }
                 ]
             })
         ]))
-        .pipe(dest(path.build.images ))
-        .pipe(browserSync.reload({stream: true}))
+        .pipe(dest(path.build.images))
+        .pipe(browserSync.reload({ stream: true }));
 }
 
 function fonts() {
-    return src(path.src.fonts, {base: `${srcPath}/assets/fonts/`})
-        .pipe(browserSync.reload({stream: true}))
+    return src(path.src.fonts, { base: `${srcPath}/assets/fonts/` })
+        .pipe(browserSync.reload({ stream: true }));
 }
 
 function clean() {
-    return del(path.clean)
+    return del(path.clean);
 }
 
 function watchFiles() {
-    gulp.watch([path.watch.html], html)
-    gulp.watch([path.watch.css], css)
-    gulp.watch([path.watch.js], js)
-    gulp.watch([path.watch.images], images)
-    gulp.watch([path.watch.fonts], fonts)
+    gulp.watch([path.watch.html], html);
+    gulp.watch([path.watch.css], css);
+    gulp.watch([path.watch.js], tsCompile);
+    gulp.watch([path.watch.images], images);
+    gulp.watch([path.watch.fonts], fonts);
 }
-
 
 exports.html = html;
 exports.css = css;
-exports.js = js;
+exports.ts = tsCompile;
 exports.img = images;
 exports.fonts = fonts;
 exports.clean = clean;
-exports.build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
+exports.build = gulp.series(clean, gulp.parallel(html, css, tsCompile, images, fonts));
 exports.default = gulp.series(exports.build, gulp.parallel(watchFiles, serve));
