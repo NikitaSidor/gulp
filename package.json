@@ -4,7 +4,8 @@
   "description": "description",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "start": "gulp",
+    "build" : "gulp build"
   },
   "keywords": [
     "bmt",
