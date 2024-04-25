@@ -145,12 +145,6 @@ function js(cb) {
                 this.emit('end');
             }
         }))
-        .pipe(webpackStream({
-          mode: "production",
-          output: {
-            filename: 'app.js',
-          }
-        }))
         .pipe(dest(path.build.js))
         .pipe(browserSync.reload({stream: true}));
 
