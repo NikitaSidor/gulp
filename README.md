@@ -72,3 +72,39 @@ gulp watch
 - `fonts`: Копирование шрифтов.
 - `clean`: Удаление папки dist перед каждой сборкой.
 - `serve`: Запуск локального сервера с помощью BrowserSync.
+
+## Дополниетельные фишки
+Объединение всех файлов js в один
+```javascript
+function js(cb) {
+    return src(path.src.js, {base: srcPath + 'assets/js/'})
+        .pipe(plumber({
+            errorHandler : function(err) {
+                notify.onError({
+                    title:    "JS Error",
+                    message:  "Error: <%= error.message %>"
+                })(err);
+                this.emit('end');
+            }
+        }))
+        .pipe(webpackStream({
+            mode: "production",
+            output: {
+                filename: '[name].js',
+            }
+        }))
+        .pipe(dest(path.build.js))
+        .pipe(browserSync.reload({stream: true}));
+
+    cb();
+}
+```
+А если не хотите удалите эту часть
+```javascript
+        .pipe(webpackStream({
+            mode: "production",
+            output: {
+                filename: '[name].js',
+            }
+        }))
+```
