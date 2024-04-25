@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="73a14a4e-0696-4295-844a-3541a464334a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack.base.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack.build.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack.dev.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/block-navigation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/common.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/prettify.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/prettify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/sort-arrow-sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/sorter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-grid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/fonts/AvenirNextCyr-Demi.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/fonts/AvenirNextCyr-Demi.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/fonts/AvenirNextCyr-Demi.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/pinguin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/_smart-grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/main.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/utils/_functions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/utils/_normalize.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/utils/_reset.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/utils/fonts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/utils/libs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/utils/mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/utils/vars.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/common.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/lk/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pug/includes/modules/footer.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pug/includes/modules/header.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pug/layout/base.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pug/pages/index.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pug/utils/mixins.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/smart-gread-layer/smart-gread-layer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/smart-gread-layer/smart-gread-layer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/sitemap.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;NikitaSidor&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:NikitaSidor/webpack-template-base_Pug.git&quot;,
+    &quot;accountId&quot;: &quot;ef44e60a-83f9-4215-a665-e32c69f1edf7&quot;
+  }
+}</component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2fXPTUq68V38IbQrJ5zIbjOldbX" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Gulp.js.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Debug Application.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;js.buildTools.gulp.gulp_package_dir&quot;: &quot;/home/geek/PhpstormProjects/e8/node_modules/gulp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/geek/PhpstormProjects/e8/src/pug/pages&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;/home/geek/.nvm/versions/node/v20.12.2/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.npm start.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;npm.watch.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/snap/phpstorm/390/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pug/pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/.gulpTask/standart" />
+      <recent name="$PROJECT_DIR$/gulp" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.watch">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="html" type="js.build_tools.gulp" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>html</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="watch" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.watch" />
+        <item itemvalue="Gulp.js.html" />
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-PS-241.15989.102" />
+        <option value="bundled-php-predefined-ba97393d7c68-c76157a7178b-com.jetbrains.php.sharedIndexes-PS-241.15989.102" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="73a14a4e-0696-4295-844a-3541a464334a" name="Changes" comment="" />
+      <created>1713944456788</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713944456788</updated>
+      <workItem from="1713944457820" duration="770000" />
+      <workItem from="1713951573493" duration="4000" />
+      <workItem from="1713952818863" duration="8230000" />
+      <workItem from="1713962961391" duration="23884000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
