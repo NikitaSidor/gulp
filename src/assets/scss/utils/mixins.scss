@@ -1,0 +1,12 @@
+@mixin google-font($font-name, $font-paths) {
+  @each $variation, $path in $font-paths {
+    @font-face {
+      font-family: $font-name;
+      $weight: nth($variation, 1);
+      $style: nth($variation, 2);
+      src: url('#{$path}') format('truetype');
+      font-weight: $weight;
+      font-style: $style;
+    }
+  }
+}
